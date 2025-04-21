@@ -14,7 +14,7 @@ st.set_page_config(page_title="Student Dropout Dashboard", layout="wide")
 df = pd.read_csv("https://raw.githubusercontent.com/dicodingacademy/dicoding_dataset/refs/heads/main/students_performance/data.csv", sep=";")
 
 # Unduh file dari URL
-url = "https://github.com/Alqurtubi17/pds-hr/raw/refs/heads/main/Klasifikasi%20Dropout/model_pipeline.pkl"
+url = "https://github.com/Alqurtubi17/pds-sd/raw/refs/heads/main/model_pipeline.pkl"
 response = requests.get(url)
 if response.status_code == 200:
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
