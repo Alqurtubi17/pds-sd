@@ -109,6 +109,8 @@ if page == "Dashboard":
     with col_feat:
         X = df[['Application_mode', 'Debtor', 'Tuition_fees_up_to_date', 'Gender', 'Scholarship_holder', 'Age_at_enrollment', 'Curricular_units_1st_sem_approved', 'Curricular_units_1st_sem_grade', 'Curricular_units_2nd_sem_approved', 'Curricular_units_2nd_sem_grade']]
         feat_imp = pd.Series(model.feature_importances_, index=X.columns).sort_values(ascending=False)
+        # Format nama kolom dengan fungsi format_column
+        feat_imp.index = feat_imp.index.map(format_column)
         fig_feat = px.bar(
             feat_imp,
             x=feat_imp.index,
